@@ -14,10 +14,10 @@ interface PromptCardPT {
 const PromptCard = ({ post }: PromptCardPT) => {
   const { setSearchText, list } = useContext(PromptListContext);
   const handleProfileClick = () => {
-    setSearchText(post.creator.username);
+    setSearchText && setSearchText(post.creator.username);
   };
   const handleTagClick = () => {
-    setSearchText(post.tag);
+    setSearchText && setSearchText(post.tag);
   };
 
   return (
@@ -37,7 +37,7 @@ const PromptCard = ({ post }: PromptCardPT) => {
 
           <div className="flex flex-col">
             <h3 className="font-satoshi font-semibold text-gray-900">
-              {list.length > 0 ? post.creator.username : "list empty"}
+              {post.creator.username}
             </h3>
             <p className="font-inter text-sm text-gray-500">
               {post.creator.email}

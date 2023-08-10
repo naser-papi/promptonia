@@ -6,3 +6,7 @@
 - 5- addijng custome style files
 - 6- using typescript
 - 7- using PromptListContext with context 
+- 8- how to debug server side code with webstorm.
+- 9- change the find method to be solved in server side.
+- 10= re-fetch after post new post added.
+- 

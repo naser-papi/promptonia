@@ -23,5 +23,8 @@ export async function GET(req: NextRequest) {
     }
 
     return NextResponse.json(list, { status: 200 });
-  } catch (ex) {}
+  } catch (err) {
+    console.log("fetch prompts...", err);
+    return new Response("Something wen wrong...", { status: 500 });
+  }
 }

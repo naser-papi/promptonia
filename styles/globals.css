@@ -158,7 +158,6 @@
 .prompt_text{
   @apply max-h-24 overflow-y-hidden;
   text-align: justify;
-  text-overflow: ellipsis;
 }
 
 .flex-center {
