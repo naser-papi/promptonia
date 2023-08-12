@@ -1,4 +1,4 @@
-# subject to mention in post
+# subject to mention in the post
 - 1- usign @ in password
 - 2- add linkedIn provider
 - 3- adding signbox
@@ -9,4 +9,8 @@
 - 8- how to debug server side code with webstorm.
 - 9- change the find method to be solved in server side.
 - 10= re-fetch after post new post added.
-- 
+- 11- current UX issues
+- 12- used chat gpt for create a modal confirm
+- 13- router.refresh not work
+- 14- need a store manager
+- 15- mention to next version ans some desired features to do.

@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { useSession } from "next-auth/react";
 import Profile from "@/components/Profile";
+
 const MyProfile = () => {
   const { data: session } = useSession();
   const [posts, setPosts] = useState([]);
@@ -14,8 +15,10 @@ const MyProfile = () => {
     //console.log("session", session);
     if (session?.user.id) {
       fetchPosts().then();
+    } else {
+      console.log("session...", session);
     }
-  }, []);
+  }, [session, session?.user]);
   return (
     <Profile
       name={"My"}
