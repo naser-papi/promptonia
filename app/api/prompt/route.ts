@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { connectToDb } from "@/utils/database";
 import Prompt from "@/models/prompt";
+
 export async function GET(req: NextRequest) {
   try {
     const searchText = req.nextUrl.searchParams.get("search");
@@ -21,7 +22,6 @@ export async function GET(req: NextRequest) {
     } else {
       list = await Prompt.find().populate("creator");
     }
-
     return NextResponse.json(list, { status: 200 });
   } catch (err) {
     console.log("fetch prompts...", err);

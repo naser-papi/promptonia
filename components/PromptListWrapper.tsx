@@ -1,11 +1,10 @@
 "use client";
 import {
   createContext,
-  useState,
   Dispatch,
-  SetStateAction,
   ReactNode,
-  useEffect,
+  SetStateAction,
+  useState,
 } from "react";
 import { IPost } from "@/types/post";
 
@@ -22,12 +21,7 @@ export const PromptListContext = createContext({} as IPromptListContext);
 
 const PromptListWrapper = ({ list, children }: PromptListPT) => {
   const [searchText, setSearchText] = useState("");
-  //const [flag, setFlag] = useState(false);
-  // useEffect(() => {
-  //   if (searchText.length > 3) {
-  //     setFlag(true);
-  //   }
-  // }, [searchText]);
+
   return (
     <PromptListContext.Provider
       value={{
