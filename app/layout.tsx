@@ -4,13 +4,13 @@ import "@/styles/globals.css";
 
 export const metadata = {
   title: "Promptopia",
-  description: "Discover & share AI prompts"
+  description: "Discover & share AI prompts",
 };
-const RootLayout = ({ children }) => {
+const RootLayout = ({ children, session }) => {
   return (
     <html lang={"en"}>
       <body>
-        <Provider>
+        <Provider session={session}>
           <div className={"main"}>
             <div className={"gradient"} />
           </div>

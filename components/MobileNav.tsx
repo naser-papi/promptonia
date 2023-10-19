@@ -2,9 +2,10 @@ import Image from "next/image";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { useState } from "react";
 import Link from "next/link";
+import { Provider } from "next-auth/providers";
 
-const MobileNav = ({ providers }) => {
-  const {data:session} = useSession();
+const MobileNav = ({ providers }: { providers: Provider }) => {
+  const { data: session } = useSession();
   const [showDropDown, setShowDropdown] = useState(false);
   return (
     <div className={"sm:hidden flex relative"}>
@@ -56,7 +57,7 @@ const MobileNav = ({ providers }) => {
       ) : (
         <div className={"auth_btns"}>
           {providers
-            ? Object.values(providers).map((prov) => (
+            ? Object.values(providers).map((prov: Provider) => (
                 <button key={prov.name} onClick={() => signIn(prov.id)}>
                   SignIn
                 </button>

@@ -8,7 +8,9 @@ const MyProfile = () => {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
     const fetchPosts = async () => {
-      const resp = await fetch(`/api/users/${session?.user.id}/posts`);
+      const resp = await fetch(`/api/users/${session?.user.id}/posts`, {
+        cache: "no-store",
+      });
       const data = await resp.json();
       setPosts(data);
     };

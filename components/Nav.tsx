@@ -1,13 +1,13 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useEffect } from "react";
-import { signIn, signOut, useSession, getProviders } from "next-auth/react";
+import { useEffect, useState } from "react";
+import { getProviders } from "next-auth/react";
 import DesktopNav from "@/components/DesktopNav";
 import MobileNav from "@/components/MobileNav";
 
 const Nav = () => {
-  const [providers, setProviders] = useState<object>(null);
+  const [providers, setProviders] = useState(null);
   useEffect(() => {
     (async () => {
       const p = await getProviders();
@@ -30,7 +30,7 @@ const Nav = () => {
       <DesktopNav providers={providers} />
 
       {/* Mobile navigator */}
-      <MobileNav />
+      <MobileNav providers={providers} />
     </nav>
   );
 };

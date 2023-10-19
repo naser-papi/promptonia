@@ -34,7 +34,7 @@ const Form = ({ type, data }: CreateFormPT) => {
                 method: "POST",
                 body: JSON.stringify({
                   ...post,
-                  userId: session?.user?.id,
+                  creator: session?.user,
                 }),
               },
       };

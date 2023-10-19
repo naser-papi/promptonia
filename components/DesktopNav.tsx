@@ -1,9 +1,10 @@
 import Link from "next/link";
-import { signIn, signOut,useSession } from "next-auth/react";
+import { signIn, signOut, useSession } from "next-auth/react";
 import Image from "next/image";
+import { Provider } from "next-auth/providers";
 
-const DesktopNav = ({ providers }) => {
-  const {data:session} = useSession();
+const DesktopNav = ({ providers }: { providers: Provider }) => {
+  const { data: session } = useSession();
   return (
     <div className={"sm:flex hidden"}>
       {session?.user ? (
@@ -11,7 +12,11 @@ const DesktopNav = ({ providers }) => {
           <Link href={"/create-prompt"} className={"black_btn"}>
             Create Post
           </Link>
-          <button type={"button"} onClick={() => signOut()} className={"outline_btn"}>
+          <button
+            type={"button"}
+            onClick={() => signOut()}
+            className={"outline_btn"}
+          >
             Sign out
           </button>
           <Link href={"/profile"}>
@@ -27,8 +32,12 @@ const DesktopNav = ({ providers }) => {
       ) : (
         <div className={"auth_btns"}>
           {providers
-            ? Object.values(providers).map((prov) => (
-                <button className={"black_btn"} key={prov.name} onClick={() => signIn(prov.id)}>
+            ? Object.values(providers).map((prov: Provider) => (
+                <button
+                  className={"black_btn"}
+                  key={prov.name}
+                  onClick={() => signIn(prov.id)}
+                >
                   SignIn {prov.name}
                 </button>
               ))

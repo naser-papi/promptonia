@@ -4,9 +4,9 @@ import Prompt from "@/models/prompt";
 
 export async function GET(req: NextRequest) {
   try {
-    const searchText = req.nextUrl.searchParams.get("search");
+    const searchText = req.nextUrl?.searchParams?.get("search");
     await connectToDb();
-    let list;
+    let list: Omit<any, never>[];
     if (searchText) {
       const regex = new RegExp(searchText, "i");
       list = await Prompt.find({

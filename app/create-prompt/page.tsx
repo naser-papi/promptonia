@@ -1,7 +1,7 @@
 import Form from "@/components/Form";
 
 export const metadata = {
-  title: "create a new prompt",
+  title: "Create your prompt",
 };
 const CreatPromptPage = () => {
   return <Form type={"Create"} data={{ prompt: "", tag: "" }} />;
